@@ -65,3 +65,41 @@ contact p{color:#999;max-width:550px;margin:0 auto}.contact small{display:block;
         white-space: normal;
     }
 }
+
+/* Hero Stats - Horizontal Layout */
+.hero .stats {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 60px !important;
+    width: 100% !important;
+    margin-top: 28px !important;
+}
+
+.hero .stats > b {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    font-size: 28px !important;
+    line-height: 1.1 !important;
+}
+
+.hero .stats > b small {
+    display: block !important;
+    margin-top: 6px !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    letter-spacing: 1.5px !important;
+    color: #888 !important;
+}
+
+@media (max-width: 800px) {
+    .hero .stats {
+        flex-wrap: wrap !important;
+        gap: 24px !important;
+    }
+}
