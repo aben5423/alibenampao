@@ -1,0 +1,1 @@
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{window.scrollTo({top:document.querySelector(a.getAttribute('href')).offsetTop-70,behavior:'smooth'})}));
