@@ -122,6 +122,11 @@ contact p{color:#999;max-width:550px;margin:0 auto}.contact small{display:block;
 .about-horizontal .copy p {
     margin-bottom: 22px;
 }
+.about-horizontal .copy b {
+    font-size: 1em !important;
+    font-weight: 700 !important;
+    letter-spacing: normal !important;
+}
 
 @media (max-width: 800px) {
     .about-horizontal .copy {
