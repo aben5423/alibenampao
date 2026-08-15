@@ -197,12 +197,15 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
     font-weight: 800 !important;
 }
 /* HOW I WORK - Section Title */
-.how-i-work h2 {
-    font-weight: 800 !important;
+/* HOW I WORK - Strong Bold Title */
+#how-i-work h2 {
+    font-weight: 900 !important;
+    -webkit-text-stroke: 0.4px currentColor;
 }
 
-.how-i-work h2 span {
-    font-weight: 800 !important;
+#how-i-work h2 span {
+    font-weight: 900 !important;
+    -webkit-text-stroke: 0.4px currentColor;
 }
 
 /* CONTACT - Section Title */
