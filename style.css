@@ -16,3 +16,13 @@
         white-space: normal;
     }
 }
+.contact-tags {
+    white-space: nowrap;
+    max-width: none !important;
+}
+
+@media (max-width: 800px) {
+    .contact-tags {
+        white-space: normal;
+    }
+}
