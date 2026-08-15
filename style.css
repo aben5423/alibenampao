@@ -133,3 +133,16 @@ contact p{color:#999;max-width:550px;margin:0 auto}.contact small{display:block;
         max-width: 100%;
     }
 }
+
+/* Stronger section typography */
+.hero h1,
+.section h2,
+.contact h2 {
+    font-weight: 700;
+}
+
+.cards h3,
+.projects h3,
+.steps h3 {
+    font-weight: 700;
+}
