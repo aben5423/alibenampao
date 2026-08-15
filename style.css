@@ -172,7 +172,14 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
    -webkit-text-stroke: 0.5px currentColor;
 }
 
+/* EXPERTISE - Section Title */
+#expertise h2 {
+    font-weight: 800 !important;
+}
 
+#expertise h2 span {
+    font-weight: 800 !important;
+}
 /* SERVICES - Section Title */
 #services h2 {
     font-weight: 800 !important;
@@ -181,4 +188,28 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
 #services h2 span {
     font-weight: 800 !important;
 }
+/* TECH STACK - Section Title */
+#stack h2 {
+    font-weight: 800 !important;
+}
 
+#stack h2 span {
+    font-weight: 800 !important;
+}
+/* HOW I WORK - Section Title */
+.steps-section h2 {
+    font-weight: 800 !important;
+}
+
+.steps-section h2 span {
+    font-weight: 800 !important;
+}
+
+/* CONTACT - Section Title */
+#contact h2 {
+    font-weight: 800 !important;
+}
+
+#contact h2 span {
+    font-weight: 800 !important;
+}
