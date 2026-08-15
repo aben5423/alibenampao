@@ -104,3 +104,27 @@ contact p{color:#999;max-width:550px;margin:0 auto}.contact small{display:block;
         gap: 24px !important;
     }
 }
+
+/* ABOUT - Horizontal Layout */
+.about-horizontal {
+    display: block;
+}
+
+.about-horizontal h2 {
+    margin-top: 35px;
+    margin-bottom: 55px;
+}
+
+.about-horizontal .copy {
+    max-width: 1100px;
+}
+
+.about-horizontal .copy p {
+    margin-bottom: 22px;
+}
+
+@media (max-width: 800px) {
+    .about-horizontal .copy {
+        max-width: 100%;
+    }
+}
