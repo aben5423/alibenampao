@@ -173,3 +173,12 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
 }
 
 
+/* SERVICES - Section Title */
+#services h2 {
+    font-weight: 800 !important;
+}
+
+#services h2 span {
+    font-weight: 800 !important;
+}
+
