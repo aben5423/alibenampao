@@ -2,7 +2,7 @@
     background:transparent;
     color:#ffffff !important;
     border:1px solid #888;
-}
+
 }
 .stats{
     display:flex;
@@ -111,8 +111,9 @@ contact p{color:#999;max-width:550px;margin:0 auto}.contact small{display:block;
 }
 
 .about-horizontal h2 {
-    margin-top: 35px;
+    margin-top: 25px;
     margin-bottom: 55px;
+     font-weight: 800 !important;
 }
 
 .about-horizontal .copy {
@@ -134,15 +135,4 @@ contact p{color:#999;max-width:550px;margin:0 auto}.contact small{display:block;
     }
 }
 
-/* Stronger section typography */
-.hero h1,
-.section h2,
-.contact h2 {
-    font-weight: 700;
-}
 
-.cards h3,
-.projects h3,
-.steps h3 {
-    font-weight: 700;
-}
