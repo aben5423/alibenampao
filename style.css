@@ -72,7 +72,7 @@ contact p{color:#999;max-width:550px;margin:0 auto}.contact small{display:block;
     flex-direction: row !important;
     align-items: flex-start !important;
     justify-content: flex-start !important;
-    gap: 60px !important;
+    gap: 45px !important;
     width: 100% !important;
     margin-top: 28px !important;
 }
@@ -84,8 +84,9 @@ contact p{color:#999;max-width:550px;margin:0 auto}.contact small{display:block;
     width: auto !important;
     margin: 0 !important;
     white-space: nowrap !important;
-    font-size: 28px !important;
+    font-size: 20px !important;
     line-height: 1.1 !important;
+    
 }
 
 .hero .stats > b small {
