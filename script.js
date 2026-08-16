@@ -33,16 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const proofNext = document.querySelector(".proof-modal-next");
     const proofCounter = document.querySelector(".proof-modal-counter");
 
-    const proofThumbs = Array.from(
-        document.querySelectorAll(".proof-thumb")
-    );
+    const projects = document.querySelectorAll(".work-project");
 
-    // Check that the modal elements exist
-    if (!proofModal || !proofModalImage || !proofModalClose) {
-        console.log("Proof of Work modal elements not found.");
-        return;
-    }
-
+    let currentGallery = [];
     let currentIndex = 0;
 
 
@@ -50,21 +43,21 @@ document.addEventListener("DOMContentLoaded", function () {
     // OPEN IMAGE
     // =========================
 
-    function openProofModal(index) {
+    function openProofModal(gallery, index) {
 
-        if (!proofThumbs[index]) return;
+        if (!gallery[index]) return;
 
-        const image = proofThumbs[index].querySelector("img");
+        const image = gallery[index].querySelector("img");
 
         if (!image) return;
 
+        currentGallery = gallery;
         currentIndex = index;
 
         proofModalImage.src = image.src;
         proofModalImage.alt = image.alt;
 
         proofModal.style.display = "flex";
-
         document.body.style.overflow = "hidden";
 
         updateProofNavigation();
@@ -77,21 +70,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateProofNavigation() {
 
-        const total = proofThumbs.length;
+        const total = currentGallery.length;
 
-        // Counter
         if (proofCounter) {
             proofCounter.textContent =
                 (currentIndex + 1) + " / " + total;
         }
 
-        // Previous button
         if (proofPrev) {
             proofPrev.style.display =
                 currentIndex === 0 ? "none" : "flex";
         }
 
-        // Next button
         if (proofNext) {
             proofNext.style.display =
                 currentIndex === total - 1 ? "none" : "flex";
@@ -100,14 +90,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================
-    // THUMBNAIL CLICK
+    // SET UP EACH PROJECT
     // =========================
 
-    proofThumbs.forEach(function (thumb, index) {
+    projects.forEach(function (project) {
 
-        thumb.addEventListener("click", function () {
+        const thumbs = Array.from(
+            project.querySelectorAll(".proof-thumb")
+        );
 
-            openProofModal(index);
+        thumbs.forEach(function (thumb, index) {
+
+            thumb.addEventListener("click", function () {
+
+                openProofModal(thumbs, index);
+
+            });
 
         });
 
@@ -125,7 +123,12 @@ document.addEventListener("DOMContentLoaded", function () {
             event.stopPropagation();
 
             if (currentIndex > 0) {
-                openProofModal(currentIndex - 1);
+
+                openProofModal(
+                    currentGallery,
+                    currentIndex - 1
+                );
+
             }
 
         });
@@ -143,8 +146,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
             event.stopPropagation();
 
-            if (currentIndex < proofThumbs.length - 1) {
-                openProofModal(currentIndex + 1);
+            if (
+                currentIndex <
+                currentGallery.length - 1
+            ) {
+
+                openProofModal(
+                    currentGallery,
+                    currentIndex + 1
+                );
+
             }
 
         });
@@ -172,7 +183,9 @@ document.addEventListener("DOMContentLoaded", function () {
     proofModal.addEventListener("click", function (event) {
 
         if (event.target === proofModal) {
+
             closeProofModal();
+
         }
 
     });
@@ -184,32 +197,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener("keydown", function (event) {
 
-        // Only work when modal is open
         if (proofModal.style.display !== "flex") {
             return;
         }
 
-        // ESC = close
+
+        // ESC
         if (event.key === "Escape") {
 
             closeProofModal();
 
         }
 
-        // LEFT ARROW = previous
+
+        // LEFT ARROW
         if (event.key === "ArrowLeft") {
 
             if (currentIndex > 0) {
-                openProofModal(currentIndex - 1);
+
+                openProofModal(
+                    currentGallery,
+                    currentIndex - 1
+                );
+
             }
 
         }
 
-        // RIGHT ARROW = next
+
+        // RIGHT ARROW
         if (event.key === "ArrowRight") {
 
-            if (currentIndex < proofThumbs.length - 1) {
-                openProofModal(currentIndex + 1);
+            if (
+                currentIndex <
+                currentGallery.length - 1
+            ) {
+
+                openProofModal(
+                    currentGallery,
+                    currentIndex + 1
+                );
+
             }
 
         }
@@ -228,6 +256,9 @@ document.addEventListener("DOMContentLoaded", function () {
         proofModalImage.src = "";
 
         document.body.style.overflow = "";
+
+        currentGallery = [];
+        currentIndex = 0;
 
     }
 
