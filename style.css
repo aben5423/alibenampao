@@ -309,3 +309,8 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
 .certifications-section {
     background: #eeeeec;
 }
+
+.certifications-section {
+    background: #eeeeec;
+    padding-bottom: 75px;
+}
