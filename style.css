@@ -615,3 +615,48 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
 
     z-index: 10001 !important;
 }
+
+
+/* =========================
+   PROOF MODAL RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .proof-modal {
+        padding: 20px;
+    }
+
+    .proof-modal img {
+        max-width: 92vw;
+        max-height: 82vh;
+    }
+
+    .proof-modal-close {
+        top: 15px;
+        right: 15px;
+        width: 38px;
+        height: 38px;
+        font-size: 24px;
+    }
+
+    .proof-modal-prev,
+    .proof-modal-next {
+        width: 42px !important;
+        height: 42px !important;
+        font-size: 21px !important;
+    }
+
+    .proof-modal-prev {
+        left: 10px !important;
+    }
+
+    .proof-modal-next {
+        right: 10px !important;
+    }
+
+    .proof-modal-counter {
+        bottom: 12px !important;
+        font-size: 11px !important;
+    }
+}
