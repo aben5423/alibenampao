@@ -536,3 +536,49 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
     background: #e31b23;
     border-color: #e31b23;
 }
+
+
+/* =========================
+   PROOF MODAL NAVIGATION
+========================= */
+
+.proof-modal-prev,
+.proof-modal-next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border: 1px solid #444;
+    background: rgba(20, 20, 20, 0.9);
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.proof-modal-prev {
+    left: 25px;
+}
+
+.proof-modal-next {
+    right: 25px;
+}
+
+.proof-modal-prev:hover,
+.proof-modal-next:hover {
+    background: #d71920;
+    border-color: #d71920;
+}
+
+.proof-modal-counter {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #aaa;
+    font-size: 11px;
+    letter-spacing: 1px;
+    z-index: 10001;
+}
