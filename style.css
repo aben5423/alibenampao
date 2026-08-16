@@ -310,23 +310,21 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
 
 
 
-/* SELECTED WORK */
+/* SELECTED WORK — CASE STUDY STYLE */
 
 #selected-work {
     background: #111;
     color: #fff;
-}
-
-#selected-work > .wrap > small {
-    color: #d71920;
+    width: 100%;
 }
 
 #selected-work h2 {
-    font-size: clamp(38px, 5vw, 58px);
+    font-size: clamp(42px, 5vw, 64px);
     line-height: 1.05;
     letter-spacing: -3px;
-    margin: 18px 0 55px;
+    margin: 18px 0 70px;
     font-weight: 800 !important;
+    max-width: 850px;
 }
 
 #selected-work h2 span {
@@ -334,35 +332,27 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
     font-weight: 800 !important;
 }
 
-.work-grid {
+.work-project {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: #333;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 70px;
+    padding: 55px 0;
+    border-top: 1px solid #333;
 }
 
-.work-card {
-    background: #151515;
-    padding: 35px;
-    min-height: 300px;
-    display: grid;
-    grid-template-columns: 45px 1fr;
-    gap: 20px;
-    transition: background .2s ease;
+.work-project:last-child {
+    border-bottom: 1px solid #333;
 }
 
-.work-card:hover {
-    background: #1c1c1c;
-}
-
-.work-number {
+.work-project-number {
     color: #d71920;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     letter-spacing: 1px;
+    margin-bottom: 28px;
 }
 
-.work-content label {
+.work-project-info label {
     display: block;
     color: #d71920;
     font-size: 9px;
@@ -371,32 +361,58 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
     margin-bottom: 12px;
 }
 
-.work-content h3 {
-    font-size: 25px;
-    margin: 0 0 18px;
+.work-project-info h3 {
+    font-size: 28px;
+    line-height: 1.1;
     letter-spacing: -1px;
+    margin: 0 0 20px;
 }
 
-.work-content p {
+.work-project-info p {
     color: #999;
     font-size: 13px;
-    line-height: 1.7;
-    max-width: 500px;
-    margin-bottom: 25px;
+    line-height: 1.75;
+    max-width: 470px;
+    margin: 0 0 25px;
 }
 
-.work-content strong {
+.work-tools {
     color: #ccc;
     font-size: 10px;
     letter-spacing: 1px;
 }
 
+.work-project-proof {
+    min-height: 330px;
+    background: #181818;
+    border: 1px solid #2d2d2d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.proof-label {
+    color: #666;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.proof-placeholder {
+    color: #444;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
 @media (max-width: 800px) {
-    .work-grid {
+    .work-project {
         grid-template-columns: 1fr;
+        gap: 35px;
     }
 
-    .work-card {
-        min-height: auto;
+    .work-project-proof {
+        min-height: 250px;
     }
 }
