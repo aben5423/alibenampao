@@ -416,3 +416,29 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
         min-height: 250px;
     }
 }
+
+.proof-flow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 22px;
+    font-size: 11px;
+    color: #ccc;
+    letter-spacing: .3px;
+}
+
+.proof-flow b {
+    color: #d71920;
+    font-weight: 700;
+}
+
+.proof-placeholder {
+    overflow: hidden;
+}
+
+.proof-placeholder img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
