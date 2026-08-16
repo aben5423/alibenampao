@@ -28,7 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const proofModal = document.getElementById("proofModal");
     const proofModalImage = document.getElementById("proofModalImage");
     const proofModalClose = document.querySelector(".proof-modal-close");
-    const proofThumbs = document.querySelectorAll(".proof-thumb");
+
+    const proofPrev = document.querySelector(".proof-modal-prev");
+    const proofNext = document.querySelector(".proof-modal-next");
+    const proofCounter = document.querySelector(".proof-modal-counter");
+
+    const proofThumbs = Array.from(
+        document.querySelectorAll(".proof-thumb")
+    );
 
     // Check that the modal elements exist
     if (!proofModal || !proofModalImage || !proofModalClose) {
@@ -36,30 +43,132 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    // Make each thumbnail clickable
-    proofThumbs.forEach(function (thumb) {
+    let currentIndex = 0;
+
+
+    // =========================
+    // OPEN IMAGE
+    // =========================
+
+    function openProofModal(index) {
+
+        if (!proofThumbs[index]) return;
+
+        const image = proofThumbs[index].querySelector("img");
+
+        if (!image) return;
+
+        currentIndex = index;
+
+        proofModalImage.src = image.src;
+        proofModalImage.alt = image.alt;
+
+        proofModal.style.display = "flex";
+
+        document.body.style.overflow = "hidden";
+
+        updateProofNavigation();
+    }
+
+
+    // =========================
+    // UPDATE NAVIGATION
+    // =========================
+
+    function updateProofNavigation() {
+
+        const total = proofThumbs.length;
+
+        // Counter
+        if (proofCounter) {
+            proofCounter.textContent =
+                (currentIndex + 1) + " / " + total;
+        }
+
+        // Previous button
+        if (proofPrev) {
+            proofPrev.style.display =
+                currentIndex === 0 ? "none" : "flex";
+        }
+
+        // Next button
+        if (proofNext) {
+            proofNext.style.display =
+                currentIndex === total - 1 ? "none" : "flex";
+        }
+    }
+
+
+    // =========================
+    // THUMBNAIL CLICK
+    // =========================
+
+    proofThumbs.forEach(function (thumb, index) {
 
         thumb.addEventListener("click", function () {
 
-            const image = thumb.querySelector("img");
+            openProofModal(index);
 
-            if (!image) return;
-
-            proofModalImage.src = image.src;
-            proofModalImage.alt = image.alt;
-
-            proofModal.style.display = "flex";
-            document.body.style.overflow = "hidden";
         });
 
     });
 
-    // Close button
-    proofModalClose.addEventListener("click", function () {
+
+    // =========================
+    // PREVIOUS
+    // =========================
+
+    if (proofPrev) {
+
+        proofPrev.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+            if (currentIndex > 0) {
+                openProofModal(currentIndex - 1);
+            }
+
+        });
+
+    }
+
+
+    // =========================
+    // NEXT
+    // =========================
+
+    if (proofNext) {
+
+        proofNext.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+            if (currentIndex < proofThumbs.length - 1) {
+                openProofModal(currentIndex + 1);
+            }
+
+        });
+
+    }
+
+
+    // =========================
+    // CLOSE BUTTON
+    // =========================
+
+    proofModalClose.addEventListener("click", function (event) {
+
+        event.stopPropagation();
+
         closeProofModal();
+
     });
 
-    // Click outside image to close
+
+    // =========================
+    // CLICK OUTSIDE IMAGE
+    // =========================
+
     proofModal.addEventListener("click", function (event) {
 
         if (event.target === proofModal) {
@@ -68,19 +177,56 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    // ESC key to close
+
+    // =========================
+    // KEYBOARD CONTROLS
+    // =========================
+
     document.addEventListener("keydown", function (event) {
 
+        // Only work when modal is open
+        if (proofModal.style.display !== "flex") {
+            return;
+        }
+
+        // ESC = close
         if (event.key === "Escape") {
+
             closeProofModal();
+
+        }
+
+        // LEFT ARROW = previous
+        if (event.key === "ArrowLeft") {
+
+            if (currentIndex > 0) {
+                openProofModal(currentIndex - 1);
+            }
+
+        }
+
+        // RIGHT ARROW = next
+        if (event.key === "ArrowRight") {
+
+            if (currentIndex < proofThumbs.length - 1) {
+                openProofModal(currentIndex + 1);
+            }
+
         }
 
     });
 
+
+    // =========================
+    // CLOSE MODAL
+    // =========================
+
     function closeProofModal() {
 
         proofModal.style.display = "none";
+
         proofModalImage.src = "";
+
         document.body.style.overflow = "";
 
     }
