@@ -488,7 +488,7 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
 .proof-gallery-note {
     width: 100%;
     text-align: center;
-    margin-top: -50px;
+    margin-top: -10px;
     font-size: 13px;
     color: #777;
 }
@@ -496,7 +496,7 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
 .proof-label {
    
     text-align: center;
-    margin-top: -50px;
+    margin-top: 10px;
     
 }
 
