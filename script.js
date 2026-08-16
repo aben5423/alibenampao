@@ -23,41 +23,66 @@ document.querySelectorAll('nav a').forEach(link => {
 // PROOF OF WORK IMAGE MODAL
 // =========================
 
-const proofModal = document.getElementById("proofModal");
-const proofModalImage = document.getElementById("proofModalImage");
-const proofModalClose = document.querySelector(".proof-modal-close");
-const proofThumbs = document.querySelectorAll(".proof-thumb");
+document.addEventListener("DOMContentLoaded", function () {
 
-proofThumbs.forEach((thumb) => {
-    thumb.addEventListener("click", () => {
-        const image = thumb.querySelector("img");
+    const proofModal = document.getElementById("proofModal");
+    const proofModalImage = document.getElementById("proofModalImage");
+    const proofModalClose = document.querySelector(".proof-modal-close");
+    const proofThumbs = document.querySelectorAll(".proof-thumb");
 
-        if (!image) return;
+    // Check that the modal elements exist
+    if (!proofModal || !proofModalImage || !proofModalClose) {
+        console.log("Proof of Work modal elements not found.");
+        return;
+    }
 
-        proofModalImage.src = image.src;
-        proofModalImage.alt = image.alt;
+    // Make each thumbnail clickable
+    proofThumbs.forEach(function (thumb) {
 
-        proofModal.style.display = "flex";
-        document.body.style.overflow = "hidden";
+        thumb.addEventListener("click", function () {
+
+            const image = thumb.querySelector("img");
+
+            if (!image) return;
+
+            proofModalImage.src = image.src;
+            proofModalImage.alt = image.alt;
+
+            proofModal.style.display = "flex";
+            document.body.style.overflow = "hidden";
+        });
+
     });
-});
 
-function closeProofModal() {
-    proofModal.style.display = "none";
-    proofModalImage.src = "";
-    document.body.style.overflow = "";
-}
-
-proofModalClose.addEventListener("click", closeProofModal);
-
-proofModal.addEventListener("click", (event) => {
-    if (event.target === proofModal) {
+    // Close button
+    proofModalClose.addEventListener("click", function () {
         closeProofModal();
-    }
-});
+    });
 
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-        closeProofModal();
+    // Click outside image to close
+    proofModal.addEventListener("click", function (event) {
+
+        if (event.target === proofModal) {
+            closeProofModal();
+        }
+
+    });
+
+    // ESC key to close
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+            closeProofModal();
+        }
+
+    });
+
+    function closeProofModal() {
+
+        proofModal.style.display = "none";
+        proofModalImage.src = "";
+        document.body.style.overflow = "";
+
     }
+
 });
