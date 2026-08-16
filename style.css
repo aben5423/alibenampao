@@ -489,3 +489,50 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
    
 }
 
+
+/* =========================
+   PROOF OF WORK MODAL
+========================= */
+
+.proof-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.92);
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.proof-modal img {
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border: 1px solid #333;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.proof-modal-close {
+    position: fixed;
+    top: 25px;
+    right: 30px;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #444;
+    background: rgba(20, 20, 20, 0.9);
+    color: #fff;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.proof-modal-close:hover {
+    background: #e31b23;
+    border-color: #e31b23;
+}
