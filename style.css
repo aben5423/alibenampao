@@ -454,7 +454,7 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
     width: 100% !important;
     max-width: 720px !important;
     /*margin: 35px auto 0 !important; */
- margin-top: -35px !important;
+
 }
 
 .proof-thumb {
@@ -486,6 +486,6 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
     letter-spacing: 0.04em;
 }
 .proof-label {
-    margin-bottom: 10px;
+   
 }
 
