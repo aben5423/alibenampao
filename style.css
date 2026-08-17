@@ -940,35 +940,21 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
 
 }
 
-/* =========================
-   ABOUT SIGNATURE
-========================= */
-
-.about-signature {
-    margin-top: -10px;
-    margin-bottom: 0px;
-}
-
-.about-signature img {
-    display: block;
-
-    width: 150px;
-    height: auto;
-
-    object-fit: contain;
-}
-
-
 /* NAME */
 
-.about-name {
-    display: block;
+.about-text .copy .about-name {
+    display: block !important;
 
-    font-size: 14px;
-    font-weight: 700;
+    position: relative !important;
+    top: -25px !important;
+
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
 
     letter-spacing: 0.04em;
 
-    color: #FF0000;
-    margin-top: -25px;
+    color: #FF0000 !important;
 }
