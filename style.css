@@ -946,7 +946,7 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
     display: block !important;
 
     position: relative !important;
-    top: -25px !important;
+    top: -100px !important;
 
     margin-top: 0 !important;
     margin-bottom: 0 !important;
@@ -956,5 +956,5 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
 
     letter-spacing: 0.04em;
 
-    color: #FF0000 !important;
+    color: #000000 !important;
 }
