@@ -946,7 +946,7 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
 
 .about-signature {
     margin-top: -10px;
-    margin-bottom: 4px;
+    margin-bottom: 0px;
 }
 
 .about-signature img {
@@ -969,6 +969,6 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
 
     letter-spacing: 0.04em;
 
-    color: #111111;
-    margin-top: -12px;
+    color: #FF0000;
+    margin-top: -25px;
 }
