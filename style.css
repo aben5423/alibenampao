@@ -660,3 +660,282 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
         font-size: 11px !important;
     }
 }
+
+
+/* =========================
+   ABOUT ME — PHOTO LAYOUT
+========================= */
+
+.about-horizontal {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+    gap: 80px;
+    align-items: center;
+}
+
+
+/* =========================
+   ABOUT TEXT
+========================= */
+
+.about-text {
+    min-width: 0;
+}
+
+.about-text > small {
+    display: block;
+    color: #e31b23;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+.about-text h2 {
+    margin: 0 0 42px;
+}
+
+.about-text .copy {
+    max-width: 850px;
+}
+
+.about-text .copy p {
+    margin-bottom: 25px;
+}
+
+.about-text .copy b {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================
+   PHOTO AREA
+========================= */
+
+.about-visual {
+    position: relative;
+
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+
+/* subtle red accent block */
+
+.about-visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 420px;
+
+    right: 0;
+    top: 70px;
+
+    border: 1px solid #e31b23;
+
+    opacity: 0.25;
+
+    z-index: 0;
+}
+
+
+/* background number */
+
+.about-visual::after {
+    content: "01";
+
+    position: absolute;
+
+    top: 5px;
+    right: 5px;
+
+    font-size: 100px;
+    font-weight: 800;
+
+    line-height: 1;
+
+    color: #eeeeee;
+
+    z-index: 0;
+}
+
+
+/* =========================
+   PHOTO FRAME
+========================= */
+
+.about-photo-frame {
+    position: relative;
+
+    width: min(400px, 100%);
+
+    background: #151515;
+
+    overflow: hidden;
+
+    border: 1px solid #222;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.18);
+
+    z-index: 2;
+}
+
+.about-photo-frame img {
+    display: block;
+
+    width: 100%;
+    height: 520px;
+
+    object-fit: cover;
+
+    object-position: center 20%;
+}
+
+
+/* red vertical accent */
+
+.about-photo-frame::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 5px;
+    height: 100%;
+
+    background: #e31b23;
+}
+
+
+/* =========================
+   PHOTO INFO CARD
+========================= */
+
+.about-photo-card {
+    position: absolute;
+
+    left: 10px;
+    bottom: 25px;
+
+    width: 330px;
+
+    display: flex;
+    align-items: stretch;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    padding: 22px 25px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+    z-index: 5;
+}
+
+.about-card-accent {
+    width: 3px;
+
+    flex-shrink: 0;
+
+    background: #e31b23;
+
+    margin-right: 18px;
+}
+
+.about-photo-card strong {
+    display: block;
+
+    font-size: 13px;
+    line-height: 1.45;
+
+    letter-spacing: 0.05em;
+}
+
+.about-photo-card p {
+    margin: 12px 0 0;
+
+    color: #aaaaaa;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .about-horizontal {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+    .about-visual {
+        min-height: 560px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .about-horizontal {
+        gap: 40px;
+    }
+
+    .about-visual {
+        min-height: 500px;
+
+        padding: 20px 10px;
+    }
+
+    .about-photo-frame {
+        width: 90%;
+    }
+
+    .about-photo-frame img {
+        height: 460px;
+    }
+
+    .about-photo-card {
+        left: 0;
+        bottom: 5px;
+
+        width: calc(100% - 35px);
+
+        padding: 18px 20px;
+    }
+
+    .about-visual::before {
+        width: 75%;
+        height: 400px;
+    }
+
+    .about-visual::after {
+        font-size: 70px;
+    }
+
+}
