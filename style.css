@@ -940,3 +940,34 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
 
 }
 
+/* =========================
+   ABOUT SIGNATURE
+========================= */
+
+.about-signature {
+    margin-top: 18px;
+    margin-bottom: 4px;
+}
+
+.about-signature img {
+    display: block;
+
+    width: 150px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* NAME */
+
+.about-name {
+    display: block;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+    color: #111111;
+}
