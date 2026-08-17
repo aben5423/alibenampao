@@ -967,3 +967,20 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
 
     object-fit: contain !important;
 }
+
+/* =========================
+   HEADER LOGO
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    display: block;
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+}
