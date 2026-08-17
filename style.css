@@ -946,7 +946,7 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
     display: block !important;
 
     position: relative !important;
-    top: -25px !important;
+    top: -30px !important;
 
     margin-top: 0 !important;
     margin-bottom: 0 !important;
@@ -954,7 +954,7 @@ copy{color:#666}.copy b{font-size:10px;letter-spacing:3px;color:#222}.dark{backg
     font-size: 14px !important;
     font-weight: 700 !important;
 
-    color: #FF0000 !important;
+    color: #000000 !important;
 }
 
 .about-text .copy .about-signature img {
